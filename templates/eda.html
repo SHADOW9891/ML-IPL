@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+    
+        <meta charset="utf-8">
+        <title>IPL</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='ipl-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    </head>
+
+    <body>   
+        
+        <!--App name-->
+        <div class='header'>
+            <div class="scroller">
+                <div class="teams">
+                  <span>MI</span>
+                  <span>CSK</span>
+                  <span>RCB</span>
+                  <span>SRH</span>
+                  <span>RR</span>
+                  <span>DC</span>
+                  <span>KXIP</span>
+                  <span>KKR</span>
+                  <span>MI</span>
+                  <span>CSK</span>
+                  <span>RCB</span>
+                  <span>SRH</span>
+                  <span>RR</span>
+                  <span>DC</span>
+                  <span>KXIP</span>
+                  <span>KKR</span>
+                </div>
+            </div>
+            
+            <h2 class='container-heading'><span class='heading_first'>Indian Premier League (IPL)</span><span class="heading_second"> Score Predictor</span></h2>
+            <div class='description'>
+                <p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+            </div>
+       
+        </div>
+        
+        <div class="eda_main">
+            <form action="{{ url_for('ans') }}" method="POST">
+                <!-- EDA Dropdown -->
+                <select class="eda_qn" name="question">
+                    <option value="none">--- Ask Me! ---</option>
+                    <option value="Which is the favorite venue of BCCI to hold an IPL match?">Which is the favorite venue of BCCI to hold an IPL match?</option>
+                    <option value="Which team has won most number of IPL seasons?">Which team has won most number of IPL seasons?</option>
+                    <option value="Ultimate Chasing Team?">Ultimate Chasing Team?</option>
+                    <option value="How many matches won by chasing vs defending by the teams?">How many matches won by chasing vs defending by the teams?</option>
+                    <option value="Teams preference to bat or bowl first after winning the toss?">Teams preference to bat or bowl first after winning the toss?</option>
+                    <option value="Winning the toss has any impact on the match result?">Winning the toss has any impact on the match result?</option>
+                    <option value="Maximum man of the match awards won by the player?">Maximum man of the match awards won by the player?</option>
+                    <option value="Highest run getter in IPL history?">Highest run getter in IPL history?</option>
+                    <option value="Highest wicket taker in the IPL history?">Highest wicket taker in the IPL history?</option>
+                    <option value="Highest Individual Score in IPL history?">Highest Individual Score in IPL history?</option>
+                    <option value="Most Orange caps won by a batsman?">Most Orange caps won by a batsman?</option>
+                    <option value="Most Purple caps won by a batsman?">Most Purple caps won by a batsman?<option>
+                    <option value="Finals Played vs Finals Won?">Finals Played vs Finals Won?<option>                   
+                </select>
+                <input type="submit" class="myButton" value="Answer">
+            </form>
+        </div>
+
+
+        <div class="pic">
+            
+                <div class="trophy">
+                        <img src="{{ url_for('static', filename='trophy1.png') }}" alt="trophy1">   
+                </div>
+            
+        </div>   
+
+        <!--footer-->
+        <div class='footer'>
+            <p class='footer-description'><span>©</span> Siddhesh Bhabad.</p>
+        </div>
+        
+        <script  src="{{ url_for('static', filename='rotate.js') }}"></script>
+
+        
+    </body>
+</html>
+
+

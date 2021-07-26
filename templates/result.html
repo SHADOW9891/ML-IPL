@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+    
+        <meta charset="utf-8">
+        <title>IPL</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='ipl-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    </head>
+
+    <style>
+        
+        .split {
+          height: 70%;
+          width: 50%;
+          position: absolute;
+          z-index: 1;
+          
+          overflow-x: hidden;
+          padding-top: 20px;
+        }
+        
+        .left {
+          height: 70%;
+          left: 0;
+          background-color: rgb(255, 255, 255);
+          overflow:hidden;
+        }
+        
+        .right {
+          height: 70%;
+          right: 80px;
+          background-color: rgb(255, 255, 255);
+          overflow: hidden;
+        }
+        
+        .centered {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+        }
+
+        .content {
+            padding:25px;
+        }
+    </style>
+
+    <body>
+
+        <!--App name-->
+        <div class='header'>
+            <div class="scroller">
+                <div class="teams">
+                  <span>MI</span>
+                  <span>CSK</span>
+                  <span>RCB</span>
+                  <span>SRH</span>
+                  <span>RR</span>
+                  <span>DC</span>
+                  <span>KXIP</span>
+                  <span>KKR</span>
+                  <span>MI</span>
+                  <span>CSK</span>
+                  <span>RCB</span>
+                  <span>SRH</span>
+                  <span>RR</span>
+                  <span>DC</span>
+                  <span>KXIP</span>
+                  <span>KKR</span>
+                </div>
+            </div>
+            
+            <h2 class='container-heading'><span class='heading_first'>Indian Premier League (IPL)</span><span class="heading_second"> Score Predictor</span></h2>
+            <div class='description'>
+                <p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+            </div>
+            
+            <form action="{{ url_for('eda') }}" method="POST">
+                <div class="eda_pos">
+                    <button type="submit" class="eda_button">EDA</button>
+                </div>
+            </form>
+
+        </div>
+
+
+
+        <div class="content">
+            <div class="split left">
+                <div class="centered">
+
+                        <!-- Result -->
+                        <div class="w3-card-2", id="res">
+                            <div class="results">
+                                <p class='result-p'>The final predicted score:</span></p>
+                                <p class='result-p1'>{{ lower_limit }} to {{ upper_limit }}</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="split right">
+            <div class="centered">
+                <div class="logo">
+                        <img src="{{ url_for('static', filename='logo.png') }}" alt="ipl logo">   
+                </div>
+            </div>
+        </div>                  
+
+        <!--footer-->
+        <div class='footer'>
+            <p class='footer-description'><span>©</span> Siddhesh Bhabad.</p>
+        </div>
+        
+        <script  src="{{ url_for('static', filename='rotate.js') }}"></script>
+
+        
+    </body>
+</html>

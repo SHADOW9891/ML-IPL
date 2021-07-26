@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+    
+        <meta charset="utf-8">
+        <title>IPL</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='ipl-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    </head>
+
+    <body>   
+        
+        <!--App name-->
+        <div class='header'>
+            <div class="scroller">
+                <div class="teams">
+                  <span>MI</span>
+                  <span>CSK</span>
+                  <span>RCB</span>
+                  <span>SRH</span>
+                  <span>RR</span>
+                  <span>DC</span>
+                  <span>KXIP</span>
+                  <span>KKR</span>
+                  <span>MI</span>
+                  <span>CSK</span>
+                  <span>RCB</span>
+                  <span>SRH</span>
+                  <span>RR</span>
+                  <span>DC</span>
+                  <span>KXIP</span>
+                  <span>KKR</span>
+                </div>
+            </div>
+            
+            <h2 class='container-heading'><span class='heading_first'>Indian Premier League (IPL)</span><span class="heading_second"> Score Predictor</span></h2>
+            <div class='description'>
+                <p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+            </div>
+       
+        </div>
+
+        
+        <!--Visualization-->
+        
+        <div class="answer">
+            <div class="graph">
+                <p class='qns'>{{ question }}</p> 
+                    <hr class="hor_line">
+                    {% if question == 'Which is the favorite venue of BCCI to hold an IPL match?' %}
+                        <img src="{{ url_for('static', filename='most_played_venue.png') }}" alt="most_played_venue">
+                    {% elif question == 'Which team has won most number of IPL seasons?' %}
+                        <img src="{{ url_for('static', filename='dominant_team.png') }}" alt="dominant_team"> 
+                    {% elif question == 'Ultimate Chasing Team?' %}
+                        <img src="{{ url_for('static', filename='ultimate_chasers.png') }}" alt="ultimate_chasers">
+                    {% elif question == 'How many matches won by chasing vs defending by the teams?' %}
+                        <img src="{{ url_for('static', filename='chasing_vs_defending.png') }}" alt="chasing_vs_defending">
+                    {% elif question == 'Teams preference to bat or bowl first after winning the toss?' %}
+                        <img src="{{ url_for('static', filename='bat_or_bowl_first.png') }}" alt="bat_or_bowl_first">
+                    {% elif question == 'Winning the toss has any impact on the match result?' %}
+                        <img src="{{ url_for('static', filename='toss_wins_match.png') }}" alt="toss_wins_match">
+                    {% elif question == 'Maximum man of the match awards won by the player?' %}
+                        <img src="{{ url_for('static', filename='most_mom.png') }}" alt="most_mom">
+                    {% elif question == 'Highest run getter in IPL history?' %}
+                        <img src="{{ url_for('static', filename='best_batsman.png') }}" alt="best_batsman">
+                    {% elif question == 'Highest wicket taker in the IPL history?' %}
+                        <img src="{{ url_for('static', filename='best_bowler.png') }}" alt="best_bowler">
+                    {% elif question == 'Highest Individual Score in IPL history?' %}
+                        <img src="{{ url_for('static', filename='highest_ind_score.png') }}" alt="highest_ind_score">
+                    {% elif question == 'Most Orange caps won by a batsman?' %}
+                        <img src="{{ url_for('static', filename='orange_cap.png') }}" alt="orange_cap">
+                    {% elif question == 'Most Purple caps won by a batsman?' %}
+                        <img src="{{ url_for('static', filename='purple_cap.png') }}" alt="purple_cap">
+                    {% elif question == 'Finals Played vs Finals Won?' %}
+                        <img src="{{ url_for('static', filename='finals_played_vs_won.png') }}" alt="finals_played_vs_won">
+                    {% endif %}
+            </div>
+        </div>  
+  
+
+        <!--footer-->
+        <div class='footer'>
+            <p class='footer-description'><span>©</span> Siddhesh Bhabad.</p>
+        </div>
+        
+        <script  src="{{ url_for('static', filename='rotate.js') }}"></script>
+
+        
+    </body>
+</html>
